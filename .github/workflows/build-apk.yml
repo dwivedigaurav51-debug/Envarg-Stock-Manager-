@@ -31,8 +31,15 @@ jobs:
         run: gradle :app:assembleDebug --no-daemon --stacktrace
       - name: Verify separate Android package
         run: |
-          AAPT=$(find "$ANDROID_HOME/build-tools" -name aapt -type f | sort -V | tail -1)
-          "$AAPT" dump badging app/build/outputs/apk/debug/app-debug.apk | grep -F "package: name='com.envarg.inventory.pro2026'"
+          python3 - <<'PY'
+          import json, pathlib
+          p = pathlib.Path("app/build/outputs/apk/debug/output-metadata.json")
+          data = json.loads(p.read_text())
+          actual = data.get("applicationId")
+          print("Built APK applicationId:", actual)
+          assert actual == "com.envarg.inventory.pro2026", "Unexpected application ID"
+          assert any(e.get("outputFile") == "app-debug.apk" for e in data["elements"])
+          PY
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
