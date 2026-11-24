@@ -29,16 +29,20 @@ jobs:
           gradle-version: '8.10.2'
       - name: Build debug APK
         run: gradle :app:assembleDebug --no-daemon --stacktrace
+      - name: Verify separate Android package
+        run: |
+          AAPT=$(find "$ANDROID_HOME/build-tools" -name aapt -type f | sort -V | tail -1)
+          "$AAPT" dump badging app/build/outputs/apk/debug/app-debug.apk | grep -F "package: name='com.envarg.inventory.pro2026'"
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: Envarg-Stock-Pro-APK
+          name: Envarg-Inventory-Pro-V12-APK
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
-      - name: Publish downloadable V11 APK
+      - name: Publish downloadable V12 APK
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          cp app/build/outputs/apk/debug/app-debug.apk Envarg-Stock-Pro.apk
-          gh release view stock-pro-v11 >/dev/null 2>&1 || gh release create stock-pro-v11 --title "Envarg Stock Pro V11" --notes "Glossy black stock manager with blinking balance" --target "$GITHUB_SHA"
-          gh release upload stock-pro-v11 Envarg-Stock-Pro.apk --clobber
+          cp app/build/outputs/apk/debug/app-debug.apk Envarg-Inventory-Pro-V12.apk
+          gh release view inventory-pro-v12 >/dev/null 2>&1 || gh release create inventory-pro-v12 --title "Envarg Inventory Pro V12" --notes "Glossy black stock manager with blinking balance" --target "$GITHUB_SHA"
+          gh release upload inventory-pro-v12 Envarg-Inventory-Pro-V12.apk --clobber
