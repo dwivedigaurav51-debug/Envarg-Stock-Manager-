@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
+<path android:pathData="M23,3H85Q105,3 105,23V85Q105,105 85,105H23Q3,105 3,85V23Q3,3 23,3Z"><aapt:attr name="android:fillColor"><gradient android:startX="8" android:startY="5" android:endX="100" android:endY="105" android:startColor="#455468" android:centerColor="#111823" android:endColor="#020409" android:type="linear"/></aapt:attr></path>
+<path android:fillColor="#000000" android:fillAlpha=".55" android:pathData="M14,74L54,96L97,72L57,53Z"/>
+<path android:fillColor="#0A6859" android:pathData="M17,42L54,63V91L17,70Z"/>
+<path android:fillColor="#123C38" android:pathData="M54,63L91,42V70L54,91Z"/>
+<path android:pathData="M17,42L54,21L91,42L54,63Z"><aapt:attr name="android:fillColor"><gradient android:startX="22" android:startY="24" android:endX="83" android:endY="63" android:startColor="#D2FFED" android:centerColor="#50E3B3" android:endColor="#139C86" android:type="linear"/></aapt:attr></path>
+<path android:fillColor="#C6FFF0" android:pathData="M54,25L86,43L54,61L22,43Z" android:fillAlpha=".3"/>
+<path android:fillColor="#E8F2FF" android:pathData="M38,34L57,24L76,35L57,46Z"/>
+<path android:fillColor="#8398AC" android:pathData="M38,34L57,46V53L38,42Z"/>
+<path android:fillColor="#B5C8D9" android:pathData="M57,46L76,35V42L57,53Z"/>
+<path android:fillColor="#25364A" android:pathData="M48,34L57,29L66,34L57,39Z"/>
+<path android:fillColor="#D1FFF1" android:pathData="M25,55L30,58V69L25,66Z M34,60L39,63V74L34,71Z M43,65L48,68V79L43,76Z"/>
+<path android:fillColor="#F9D68B" android:pathData="M65,66L69,69L82,55L85,58L69,77L61,70Z"/>
+<path android:strokeColor="#B3FFEC" android:strokeWidth="1.5" android:fillColor="#00000000" android:pathData="M17,42L54,63L91,42 M54,63V91"/>
+<path android:fillColor="#FFFFFF" android:fillAlpha=".7" android:pathData="M15,23L19,13L23,23L33,27L23,31L19,41L15,31L5,27Z"/>
+</vector>
